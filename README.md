@@ -1,45 +1,66 @@
-# E-shop
+# 🛒 Zaldrion E-Shop Simulator
 
-E‑shop Simulator
-Un simulador de tienda online en C# (consola) que permite gestionar inventario, carrito de compras y presupuesto del cliente. El programa reproduce la experiencia de un e‑commerce básico directamente en la terminal.
-🚀 Características principales
-- Inventario dinámico: carga desde archivo inventory.txt o usa un inventario por defecto.
-- Gestión de artículos: cada producto tiene nombre, descripción, precio, rating y fecha de alta.
-- Carrito de compras: añadir, remover y visualizar artículos con control de stock.
-- Presupuesto del cliente: el sistema valida que las compras no excedan el presupuesto disponible.
-- Checkout seguro: actualiza inventario y presupuesto tras la compra.
-- Interfaz interactiva: menús en consola con opciones de búsqueda, ordenación y paginación.
-- Ordenación flexible: por nombre, precio, descripción, rating o fecha (ascendente/descendente).
-📂 Estructura del proyecto
-E-shop/
- └── src/
-     └── Program.cs   # Código principal con toda la lógica
-     └── inventory.txt (opcional) # Archivo de inventario externo
+Una aplicación de consola en C# que simula las operaciones principales de una tienda en línea (E-Shop). El proyecto implementa lógica de negocio, manejo de inventario, simulación de cliente con presupuesto y una interfaz de usuario basada en menús robustos con paginación, ordenamiento y búsqueda.
 
+## ✨ Características Principales
 
-🛠️ Requisitos
-- .NET 6.0 o superior
-- Consola compatible con UTF‑8 (para caracteres y símbolos)
-▶️ Ejecución
-- Clona el repositorio:
-git clone https://github.com/PedroXCode/E-shop.git
-cd E-shop/src
-- Compila y ejecuta:
-dotnet run
-- Introduce tu presupuesto inicial y comienza a comprar.
-📑 Ejemplo de inventario (inventory.txt)
-Formato esperado:
-Nombre;Descripción;Precio;Rating;Fecha;Stock
-Mouse Gamer;Mouse RGB;24.99;4;2025-03-10;15
-Teclado Mecánico;Switches blue;54.99;5;2025-01-22;10
+Este simulador está diseñado para demostrar la programación orientada a objetos (POO) y la manipulación segura de datos de entrada en un entorno de consola.
 
+* **Simulación de Cliente:**
+    * El usuario inicia la sesión con un **presupuesto** definido.
+    * Calcula y rastrea el total del carrito y el balance restante en tiempo real.
+* **Gestión de Inventario Dinámico:**
+    * Carga inicial de productos desde un archivo externo (`inventory.txt`) o utiliza datos por defecto si el archivo no existe o es inválido.
+    * El stock se actualiza tras cada compra exitosa.
+* **Navegación Avanzada:**
+    * **Paginación:** Muestra listas de artículos gestionables por páginas.
+    * **Ordenamiento:** Permite ordenar el inventario o el carrito por campos como Nombre, Precio, Rating y Fecha (ascendente/descendente).
+    * **Búsqueda/Filtro:** Permite filtrar artículos por nombre o descripción.
+* **Lógica Transaccional Segura:**
+    * El proceso de **Añadir al Carrito** valida el stock disponible.
+    * El **Checkout** (`H`) realiza la validación final del presupuesto y el stock antes de confirmar la compra y actualizar el inventario.
+* **Interfaz de Usuario (UX):**
+    * Utiliza una clase `InputHelper` para validar rigurosamente toda la entrada de usuario, asegurando que los números estén dentro de rangos y las opciones sean válidas.
 
-🎮 Uso básico
-- [N] Página siguiente / [P] Página anterior
-- [B] Buscar artículos
-- [O] Ordenar inventario
-- [A] Añadir al carrito
-- [C] Ir al carrito
-- [R] Remover del carrito
-- [H] Checkout
-- [E] Salir
+## 🛠️ Tecnologías
+
+* **Lenguaje:** C#
+* **.NET:** Aplicación de Consola
+* **Estructuras de Datos Avanzadas:** Uso de `Dictionary<Item, int>` para manejar el carrito y el inventario, y clases `IComparable` / `IComparer` para la lógica de ordenamiento.
+
+## 🏁 Cómo Empezar
+
+### 📄 Requisitos
+
+* [SDK de .NET](https://dotnet.microsoft.com/es-es/download) (Se recomienda la versión más reciente compatible).
+
+### ⚙️ Instalación y Ejecución
+
+1.  **Clonar el repositorio:**
+    ```sh
+    git clone [https://github.com/PedroXCode/E-shop.git](https://github.com/PedroXCode/E-shop.git)
+    ```
+2.  **Navegar al directorio principal:**
+    ```sh
+    cd E-shop/src 
+    ```
+3.  **Ejecutar la aplicación:**
+    ```sh
+    dotnet run
+    ```
+    *(La aplicación se iniciará y te pedirá tu presupuesto inicial.)*
+
+### 📁 Formato del Archivo de Inventario (`inventory.txt`)
+
+Si deseas cargar tu propio inventario, crea un archivo llamado `inventory.txt` en el mismo directorio de ejecución de la aplicación (usualmente `bin/Debug/netX.X/` de tu proyecto) y usa el siguiente formato, separado por punto y coma (`;`):
+
+| Campo | Descripción | Ejemplo |
+| :--- | :--- | :--- |
+| **Nombre** | Nombre del producto. | `Mouse Gamer` |
+| **Descripción** | Breve descripción. | `Mouse óptico RGB` |
+| **Precio** | Precio con punto decimal. | `24.99` |
+| **Rating** | Calificación (entero 1-5). | `4` |
+| **Fecha** | Fecha de ingreso (YYYY-MM-DD). | `2025-03-10` |
+| **Stock** | Cantidad en inventario. | `15` |
+
+**Ejemplo de línea en `inventory.txt`:**
