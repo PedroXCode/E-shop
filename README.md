@@ -1,4 +1,4 @@
-# 🛒 Zaldrion E-Shop Simulator
+# 🛒 Zaldrion Tecno Shop Simulator
 
 Una aplicación de consola en C# que simula las operaciones principales de una tienda en línea (E-Shop). El proyecto implementa lógica de negocio, manejo de inventario, simulación de cliente con presupuesto y una interfaz de usuario basada en menús robustos con paginación, ordenamiento y búsqueda.
 
