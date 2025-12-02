@@ -4,7 +4,6 @@ Una aplicación de consola en C# que simula las operaciones principales de una t
 
 ## ✨ Características Principales
 
-Este simulador está diseñado para demostrar la programación orientada a objetos (POO) y la manipulación segura de datos de entrada en un entorno de consola.
 
 * **Simulación de Cliente:**
     * El usuario inicia la sesión con un **presupuesto** definido.
